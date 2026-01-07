@@ -50,6 +50,46 @@ npm run build:yooni
 
 빌드된 파일은 `dist` 폴더에 생성됩니다.
 
+### Firebase 배포
+
+#### 초기 설정
+
+1. Firebase CLI 로그인:
+```bash
+npx firebase login
+```
+
+2. Firebase 프로젝트 초기화 (각 프로젝트별로 한 번씩):
+```bash
+# Kiro 프로젝트 초기화
+npx firebase init --project kiro
+
+# Yooni 프로젝트 초기화  
+npx firebase init --project yooni
+```
+
+3. `.firebaserc` 파일 생성 (프로젝트 루트에):
+```json
+{
+  "projects": {
+    "kiro": "your-kiro-firebase-project-id",
+    "yooni": "your-yooni-firebase-project-id"
+  }
+}
+```
+
+#### 배포
+
+```bash
+# Kiro 배포
+npm run deploy:kiro
+
+# Yooni 배포
+npm run deploy:yooni
+```
+
+각 명령어는 자동으로 빌드 후 해당 Firebase 프로젝트에 배포합니다.
+
 ## 환경변수
 
 프로젝트는 환경변수 `VITE_PERSON`을 사용하여 kiro 또는 yooni의 데이터를 로드합니다.

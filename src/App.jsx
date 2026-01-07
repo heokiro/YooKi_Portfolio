@@ -5,8 +5,22 @@ const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+`
+
+const Name = styled.h1`
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+`
+
+const Title = styled.p`
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0;
 `
 
 function App() {
@@ -14,8 +28,9 @@ function App() {
 
   return (
     <Container>
+      <Name>{content.name}</Name>
+      <Title>{content.title}</Title>
       {/* 포트폴리오 내용이 여기에 들어갈 예정입니다 */}
-      {/* content 객체를 사용하여 동적으로 데이터를 표시할 수 있습니다 */}
     </Container>
   )
 }

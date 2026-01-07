@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "kiro": "your-kiro-firebase-project-id",
+    "yooni": "your-yooni-firebase-project-id"
+  }
+}
+

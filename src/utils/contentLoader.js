@@ -2,7 +2,11 @@
 import kiroContent from '../content/kiro/index.js'
 import yooniContent from '../content/yooni/index.js'
 
+// 환경변수 확인 및 디버깅
 const PERSON = import.meta.env.VITE_PERSON || 'kiro'
+console.log('VITE_PERSON:', import.meta.env.VITE_PERSON)
+console.log('PERSON:', PERSON)
+console.log('MODE:', import.meta.env.MODE)
 
 const contentMap = {
   kiro: kiroContent,
