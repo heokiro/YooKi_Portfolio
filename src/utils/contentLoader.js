@@ -2,11 +2,7 @@
 import kiroContent from '../content/kiro/index.js'
 import yooniContent from '../content/yooni/index.js'
 
-// 환경변수 확인 및 디버깅
 const PERSON = import.meta.env.VITE_PERSON || 'kiro'
-console.log('VITE_PERSON:', import.meta.env.VITE_PERSON)
-console.log('PERSON:', PERSON)
-console.log('MODE:', import.meta.env.MODE)
 
 const contentMap = {
   kiro: kiroContent,
@@ -20,6 +16,16 @@ export const getContent = () => {
     return contentMap.kiro
   }
   return content
+}
+
+// 랜덤 포트폴리오 선택
+export const getRandomPortfolio = () => {
+  const content = getContent()
+  if (!content.portfolios || content.portfolios.length === 0) {
+    return null
+  }
+  const randomIndex = Math.floor(Math.random() * content.portfolios.length)
+  return content.portfolios[randomIndex]
 }
 
 export const getPerson = () => PERSON

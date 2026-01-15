@@ -31,8 +31,8 @@ function BouncingBox({ onPositionChange }) {
 
     // 랜덤한 초기 속도 설정
     velocityRef.current = {
-      x: (Math.random() - 0.5) * 20 + 1,
-      y: (Math.random() - 0.5) * 20 + 1,
+      x: (Math.random() - 0.5) * 27 + 1,
+      y: (Math.random() - 0.5) * 27 + 1,
     }
 
     let animationFrameId
